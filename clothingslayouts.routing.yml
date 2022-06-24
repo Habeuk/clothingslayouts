@@ -1,0 +1,15 @@
+clothingslayouts.example:
+  path: '/clothingslayouts/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\clothingslayouts\Controller\ClothingslayoutsController::build'
+  requirements:
+    _permission: 'access content'
+
+clothingslayouts.settings_form:
+  path: '/admin/config/system/clothingslayouts'
+  defaults:
+    _title: 'clothingslayouts settings'
+    _form: 'Drupal\clothingslayouts\Form\SettingsForm'
+  requirements:
+    _permission: 'administer clothingslayouts configuration'

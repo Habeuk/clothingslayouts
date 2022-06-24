@@ -1,0 +1,50 @@
+{% if content %}
+	<div {{attributes.addClass('clothings-tabs')}}>
+		<ul class="nav nav-tabs" role="tablist">
+			{% if content.button_tab_1|has_value %}
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+						<h4 {{region_attributes.button_tab_1.addClass('button_tab_1')}}>
+							{{content.button_tab_1|layout_value}}
+						</h4>
+					</a>
+				</li>
+			{% endif %}
+			{% if content.button_tab_2|has_value %}
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+						<h4 {{region_attributes.button_tab_2.addClass('button_tab_2')}}>
+							{{content.button_tab_2|layout_value}}
+						</h4>
+					</a>
+				</li>
+			{% endif %}
+			{% if content.button_tab_3|has_value %}
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+						<h4 {{region_attributes.button_tab_3.addClass('button_tab_3')}}>
+							{{content.button_tab_3|layout_value}}
+						</h4>
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+		<div class="tab-content">
+			{% if content.content_tab_1|has_value %}
+				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					{{content.content_tab_1}}
+				</div>
+			{% endif %}
+			{% if content.content_tab_2|has_value %}
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					{{content.content_tab_2}}
+				</div>
+			{% endif %}
+			{% if content.content_tab_3|has_value %}
+				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					{{content.content_tab_3}}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}

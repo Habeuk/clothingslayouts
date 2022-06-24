@@ -1,0 +1,26 @@
+{% if content %}
+	<section {{attributes.addClass(['clothings_hero','d-flex','align-items-center'])}}>
+		{% if content.image_bg %}
+			<div {{region_attributes.image_bg.addClass('image_bg')}}>
+				{{ content.image_bg }}
+			</div>
+		{% endif %}
+		<div class="clothings_hero__desc">
+			{% if content.sub_titre %}
+				<h4 {{region_attributes.sub_titre.addClass('sub-title')}}>
+					{{content.sub_titre}}
+				</h4>
+			{% endif %}
+			{% if content.title %}
+				<{{settings.region_tag_title}} {{region_attributes.title.addClass('title')}}>
+					{{content.title}}
+				</{{settings.region_tag_title}}>
+			{% endif %}
+			{% if content.button %}
+				<div {{region_attributes.button.addClass('button')}}>
+					{{ content.button }}
+				</div>
+			{% endif %}
+		</div>
+	</section>
+{% endif %}

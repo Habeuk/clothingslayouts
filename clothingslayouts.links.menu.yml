@@ -1,0 +1,6 @@
+clothingslayouts.settings_form:
+  title: clothingslayouts
+  description: Configure clothingslayouts.
+  parent: system.admin_config_system
+  route_name: clothingslayouts.settings_form
+  weight: 10

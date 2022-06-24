@@ -1,0 +1,30 @@
+{% if content %}
+	<div {{attributes.addClass('clothing-testimonial')}}>
+		<div class="d-flex">
+			{% if content.image %}
+				<div class="clothing-testimonial__img">
+					{{content.image}}
+				</div>
+			{% endif %}
+			<div class="clothing-testimonial__text">
+				<div class="header">
+					{% if content.name %}
+						<h4 {{region_attributes.name.addClass('name')}}>
+							{{ content.name }}
+						</h4>
+					{% endif %}
+					{% if content.sub_titre %}
+						<div {{region_attributes.sub_titre.addClass('sub_titre')}}>
+							{{ content.sub_titre }}
+						</div>
+					{% endif %}
+				</div>
+				{% if content.comment %}
+					<div {{region_attributes.comment.addClass('comment')}}>
+						{{ content.comment }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endif %}
