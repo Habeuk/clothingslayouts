@@ -66,7 +66,9 @@ class ClothingslayoutsHero extends FormatageModelsSection {
         'value' => 'right',
         'options' => [
           'right' => 'right',
-          'left' => 'left'
+          'left' => 'left',
+          'right_cover' => 'right__cover',
+          'left_cover' => 'left__cover'
         ]
       ],
       'infos' => [
