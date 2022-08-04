@@ -1,0 +1,44 @@
+{% if content %}
+	<div {{ attributes.addClass('clothing-review') }}>
+		<div class="review-header d-flex">
+			{% if content.user_image %}
+				<div {{ region_attributes.user_image.addClass('user') }}>
+					{% set name %}{{ content.user_image|first }}{% endset %}
+				    {{ name|striptags|trim|first }}
+				</div>
+			{% endif %}
+			<div>
+    			<div class="d-flex align-items-baseline">
+    				{% if content.user_name %}
+        				<div {{ region_attributes.user_name.addClass('user_name') }}>
+        				    {{ content.user_name }}
+        				</div>
+        			{% endif %}
+        			{% if content.user_status %}
+        				<div {{ region_attributes.user_status.addClass('user_status') }}>
+        					Acheteur vérifié
+        				    {{ content.user_status }}
+        				</div>
+        			{% endif %}	
+    			</div>
+    			<div>
+    				{% if content.note_stars %}
+        				<div {{ region_attributes.note_stars.addClass('note_stars') }}>
+        				    {{ content.note_stars }}
+        				</div>
+        			{% endif %}
+    			</div>
+			</div>		
+		</div>
+		{% if content.msg %}
+    		<div {{ region_attributes.msg.addClass('review-msg') }}>
+    			{{ content.msg }}
+    		</div>
+		{% endif %}
+		{% if content.time %}
+    		<div {{ region_attributes.time.addClass('review-time') }}>
+    			{{ content.time }}
+    		</div>
+		{% endif %}
+	</div>
+{% endif %}
