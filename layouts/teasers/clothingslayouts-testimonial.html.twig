@@ -2,7 +2,7 @@
 	<div {{attributes.addClass('clothing-testimonial')}}>
 		<div class="d-flex">
 			{% if content.image %}
-				<div class="clothing-testimonial__img">
+				<div {{region_attributes.image.addClass(['image','clothing-testimonial__img'])}}>
 					{{content.image}}
 				</div>
 			{% endif %}
