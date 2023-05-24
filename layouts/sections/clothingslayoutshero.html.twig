@@ -17,9 +17,9 @@
 				</{{settings.region_tag_title}}>
 			{% endif %}
 			{% if content.button %}
-				<div {{region_attributes.button.addClass('button')}}>
-					{{ content.button }}
-				</div>
+				{% for item in content.button|array_elements(region_attributes.button.addClass('button')) %}
+        		    {{ item }}
+        	    {% endfor %}
 			{% endif %}
 		</div>
 	</section>
