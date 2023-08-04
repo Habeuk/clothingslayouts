@@ -32,17 +32,17 @@
 		</ul>
 		<div class="tab-content">
 			{% if content.content_tab_1|has_value %}
-				<div class="tab-pane fade show active" id="{{ idprefix }}home" role="tabpanel" aria-labelledby="{{ idprefix }}home-tab">
+				<div id="{{ idprefix }}home" role="tabpanel" aria-labelledby="{{ idprefix }}home-tab" {{ region_attributes.content_tab_1.addClass(['tab-pane','fade','show','active']) }}>
 					{{content.content_tab_1}}
 				</div>
 			{% endif %}
 			{% if content.content_tab_2|has_value %}
-				<div class="tab-pane fade" id="{{ idprefix }}profile" role="tabpanel" aria-labelledby="{{ idprefix }}profile-tab">
+				<div id="{{ idprefix }}profile" role="tabpanel" aria-labelledby="{{ idprefix }}profile-tab" {{ region_attributes.content_tab_2.addClass(['tab-pane','fade']) }}>
 					{{content.content_tab_2}}
 				</div>
 			{% endif %}
 			{% if content.content_tab_3|has_value %}
-				<div class="tab-pane fade" id="{{ idprefix }}contact" role="tabpanel" aria-labelledby="{{ idprefix }}contact-tab">
+				<div id="{{ idprefix }}contact" role="tabpanel" aria-labelledby="{{ idprefix }}contact-tab" {{ region_attributes.content_tab_3.addClass(['tab-pane','fade']) }}>
 					{{content.content_tab_3}}
 				</div>
 			{% endif %}
