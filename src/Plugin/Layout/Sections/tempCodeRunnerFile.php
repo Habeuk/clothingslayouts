@@ -1,2 +1,2 @@
 <?php
-Clothing : tabs
+// Clothing : tabs
