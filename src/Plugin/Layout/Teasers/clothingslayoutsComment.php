@@ -40,7 +40,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  * )
  */
 class clothingslayoutsComment extends FormatageModelsTeasers {
-  
+
   /**
    *
    * {@inheritdoc}
@@ -49,9 +49,9 @@ class clothingslayoutsComment extends FormatageModelsTeasers {
   public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
     // TODO Auto-generated method stub
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-    $this->pluginDefinition->set('icon', drupal_get_path('module', 'clothingslayouts') . "/icones/teasers/clothingslayouts-comment.png");
+    $this->pluginDefinition->set('icon', $this->pathResolver->getPath('module', 'clothingslayouts') . "/icones/teasers/clothingslayouts-comment.png");
   }
-  
+
   /**
    *
    * {@inheritdoc}
@@ -63,5 +63,4 @@ class clothingslayoutsComment extends FormatageModelsTeasers {
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-  
 }

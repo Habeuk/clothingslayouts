@@ -27,7 +27,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class ClothingslayoutsTitre extends FormatageModelsSection {
-  
+
   /**
    *
    * {@inheritdoc}
@@ -36,9 +36,9 @@ class ClothingslayoutsTitre extends FormatageModelsSection {
   public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
     // TODO Auto-generated method stub
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-    $this->pluginDefinition->set('icon', drupal_get_path('module', 'clothingslayouts') . "/icones/sections/clothingslayoutstitre.png");
+    $this->pluginDefinition->set('icon', $this->pathResolver->getPath('module', 'clothingslayouts') . "/icones/sections/clothingslayoutstitre.png");
   }
-  
+
   /**
    *
    * {@inheritdoc}
@@ -50,7 +50,7 @@ class ClothingslayoutsTitre extends FormatageModelsSection {
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-  
+
   function defaultConfiguration() {
     return [
       'region_tag_title' => 'h3',
@@ -74,20 +74,20 @@ class ClothingslayoutsTitre extends FormatageModelsSection {
       ]
     ] + parent::defaultConfiguration();
   }
-  
+
   /**
    *
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
-    
+
     $roles = [];
     foreach (Role::loadMultiple() as $role) {
       $roles[$role->id()] = $role->label();
     }
     $form['layoutrestrictions'] = [
-      
+
       '#type' => 'details',
       '#title' => 'layout restrictions ...',
       '#open' => false,
@@ -101,7 +101,7 @@ class ClothingslayoutsTitre extends FormatageModelsSection {
     ];
     return $form;
   }
-  
+
   /**
    *
    * {@inheritdoc}
@@ -110,5 +110,4 @@ class ClothingslayoutsTitre extends FormatageModelsSection {
     parent::submitConfigurationForm($form, $form_state);
     $this->configuration['layoutrestrictions'] = $form_state->getValue('layoutrestrictions');
   }
-  
 }
