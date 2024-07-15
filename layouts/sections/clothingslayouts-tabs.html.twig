@@ -1,10 +1,10 @@
 {% if content %}
-{% set idprefix %}tabs-{{ random(1000, 10000) }}{% endset %}
+	{% set idprefix %}tabs-{{ random(1000, 10000) }}{% endset %}
 	<div {{attributes.addClass('clothings-tabs')}}>
 		<ul class="nav nav-tabs" role="tablist">
 			{% if content.button_tab_1|has_value %}
 				<li class="nav-item" role="presentation">
-					<a class="nav-link active" id="{{ idprefix }}home-tab" data-toggle="tab" href="#{{ idprefix }}home" role="tab" aria-controls="{{ idprefix }}home" aria-selected="true">
+					<a class="nav-link active" id="{{ idprefix }}home-tab" data-bs-toggle="tab" data-bs-target="#{{ idprefix }}home" role="tab" aria-controls="{{ idprefix }}home" aria-selected="true">
 						<h4 {{region_attributes.button_tab_1.addClass('button_tab_1')}}>
 							{{content.button_tab_1|layout_value}}
 						</h4>
@@ -13,7 +13,7 @@
 			{% endif %}
 			{% if content.button_tab_2|has_value %}
 				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="{{ idprefix }}profile-tab" data-toggle="tab" href="#{{ idprefix }}profile" role="tab" aria-controls="{{ idprefix }}profile" aria-selected="false">
+					<a class="nav-link" id="{{ idprefix }}profile-tab" data-bs-toggle="tab" data-bs-target="#{{ idprefix }}profile" role="tab" aria-controls="{{ idprefix }}profile" aria-selected="false">
 						<h4 {{region_attributes.button_tab_2.addClass('button_tab_2')}}>
 							{{content.button_tab_2|layout_value}}
 						</h4>
@@ -22,7 +22,7 @@
 			{% endif %}
 			{% if content.button_tab_3|has_value %}
 				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="{{ idprefix }}contact-tab" data-toggle="tab" href="#{{ idprefix }}contact" role="tab" aria-controls="{{ idprefix }}contact" aria-selected="false">
+					<a class="nav-link" id="{{ idprefix }}contact-tab" data-bs-toggle="tab" data-bs-target="#{{ idprefix }}contact" role="tab" aria-controls="{{ idprefix }}contact" aria-selected="false">
 						<h4 {{region_attributes.button_tab_3.addClass('button_tab_3')}}>
 							{{content.button_tab_3|layout_value}}
 						</h4>
